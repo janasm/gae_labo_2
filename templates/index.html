@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Facturas</title>
+
+    <script>
+        var validate = function () {
+
+            var concepto = document.getElementById("concepto").value;
+            var precioUd = document.getElementById("precioUd").value;
+            var uds = document.getElementById("uds").value;
+            var importeTotal = document.getElementById("importeTotal").value;
+            var iva = document.getElementById("iva").value;
+            var cifEm = document.getElementById("cifEm").value;
+            var nombreEm = document.getElementById("nombreEm").value;
+            var direccionEm = document.getElementById("direccionEm").value;
+            var poblacionEm = document.getElementById("poblacionEm").value;
+            var cpEm = document.getElementById("cpEm").value;
+            var paisEm = document.getElementById("paisEm").value;
+            var contactoEm = document.getElementById("contactoEm").value;
+            var emailEm = document.getElementById("emailEm").value;
+            var tlfnEm = document.getElementById("tlfnEm").value;
+            var cifCli = document.getElementById("cifCli").value;
+            var nombreCli = document.getElementById("nombreCli").value;
+            var direccionCli = document.getElementById("direccionCli").value;
+            var poblacionCli = document.getElementById("poblacionCli").value;
+            var cpCli = document.getElementById("cpCli").value;
+            var paisCli = document.getElementById("paisCli").value;
+            var contactoCli = document.getElementById("contactoCli").value;
+            var emailCli = document.getElementById("emailCli").value;
+            var tlfnCli = document.getElementById("tlfnCli").value;
+
+            if (concepto != "" && precioUd != "" && uds != "" && importeTotal != "" && iva != "" &&
+                cifEm != "" && nombreEm != "" && direccionEm != "" && poblacionEm != "" && cpEm != "" && paisEm != "" &&
+                contactoEm != "" && emailEm != "" && tlfnEm != "" &&
+                cifCli != "" && nombreCli != "" && direccionCli != "" && poblacionCli != "" && cpCli != "" && paisCli != "" &&
+                contactoCli != "" && emailCli != "" && tlfnCli != ""
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1>Generador de Facturas</h1>
+
+
+    <form id="formFactura" action="/generarFactura" method="post" onsubmit="return validate()">
+
+        <div>
+            <h2>Datos del emisor:</h2>
+
+            <label for="cifEm">
+                CIF:
+            </label>
+            <input
+                type="text"
+                id="cifEm"
+                name="cifEm"
+            >
+            <br/><br/>
+
+            <label for="nombreEm">
+                Nombre:
+            </label>
+            <input
+                    type="text"
+                    id="nombreEm"
+                    name="nombreEm"
+            >
+            <br/><br/>
+
+            <label for="direccionEm">
+                Dirección:
+            </label>
+            <input
+                type="text"
+                id="direccionEm"
+                name="direccionEm"
+            >
+            <br/><br/>
+
+            <label for="poblacionEm">
+                Población:
+            </label>
+            <input
+                type="text"
+                id="poblacionEm"
+                name="poblacionEm">
+            <br/><br/>
+
+            <label for="cpEm">
+                Código Postal:
+            </label>
+            <input
+                type="number"
+                id="cpEm"
+                name="cpEm"
+            >
+            <br/><br/>
+
+            <label for="paisEm">
+                País:
+            </label>
+            <input
+                type="text"
+                id="paisEm"
+                name="paisEm"
+            >
+            <br/><br/>
+
+            <label for="contactoEm">
+                Persona de contacto:
+            </label>
+            <input
+                type="text"
+                id="contactoEm"
+                name="contactoEm"
+            >
+            <br/><br/>
+
+            <label for="emailEm">
+                Email:
+            </label>
+            <input
+                type="email"
+                id="emailEm"
+                name="emailEm"
+            >
+            <br/><br/>
+
+            <label for="tlfnEm">
+                Teléfono:
+            </label>
+            <input
+                type="number"
+                id="tlfnEm"
+                name="tlfnEm"
+            >
+
+            <br/><br/>
+        </div>
+
+        <div>
+            <h2> Datos del cliente: </h2>
+
+            <label for="cifCli">
+                CIF:
+            </label>
+            <input
+                type="text"
+                id="cifCli"
+                name="cifCli"
+            >
+            <br/><br/>
+
+            <label for="nombreCli">
+                Nombre:
+            </label>
+            <input
+                    type="text"
+                    id="nombreCli"
+                    name="nombreCli">
+            <br/><br/>
+
+            <label for="direccionCli">
+                Dirección:
+            </label>
+            <input
+                type="text"
+                id="direccionCli"
+                name="direccionCli"
+            >
+            <br/><br/>
+
+            <label for="poblacionCli">
+                Población:
+            </label>
+            <input
+                type="text"
+                id="poblacionCli"
+                name="poblacionCli"
+            >
+            <br/><br/>
+
+            <label for="cpCli">
+                Código Postal:
+            </label>
+            <input
+                type="number"
+                id="cpCli"
+                name="cpCli"
+            >
+            <br/><br/>
+
+            <label for="paisCli">
+                País:
+            </label>
+            <input
+                type="text"
+                id="paisCli"
+                name="paisCli"
+            >
+            <br/><br/>
+
+            <label for="contactoCli">
+                Persona de contacto:
+            </label>
+            <input
+                type="text"
+                id="contactoCli"
+                name="contactoCli"
+            >
+            <br/><br/>
+
+            <label for="emailCli">
+                Email:
+            </label>
+            <input
+                type="email"
+                id="emailCli"
+                name="emailCli"
+            >
+            <br/><br/>
+
+            <label for="tlfnCli">
+                Teléfono:
+            </label>
+            <input
+                type="number"
+                id="tlfnCli"
+                name="tlfnCli"
+            >
+            <br/><br/>
+        </div>
+
+        <div>
+            <h2>Datos Linea:</h2>
+
+            <label for="concepto">
+                Concepto:
+            </label>
+            <input
+                type="text"
+                id="concepto"
+                name="concepto"
+            >
+            <br/><br/>
+
+            <label for="precioUd">
+                Precio/Unidad:
+            </label>
+            <input
+                type="number"
+                id="precioUd"
+                name="precioUd"
+            >
+            <br/><br/>
+
+            <label for="uds">
+                Unidades:
+            </label>
+            <input
+                type="number"
+                id="uds"
+                name="uds"
+            >
+            <br/><br/>
+
+            <label for="importeTotal">
+                Importe total:
+            </label>
+            <input
+                type="number"
+                id="importeTotal"
+                name="importeTotal"
+            >
+            <br/><br/>
+
+            <label for="iva">
+                IVA:
+            </label>
+            <input
+                type="number"
+                id="iva"
+                name="iva"
+            >
+            <br/><br/>
+
+            <input type="submit" value="Generar Factura">
+        </div>
+    </form>
+</body>
+</html>
